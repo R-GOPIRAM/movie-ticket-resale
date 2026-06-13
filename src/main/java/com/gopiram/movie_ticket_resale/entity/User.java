@@ -1,11 +1,15 @@
 package com.gopiram.movie_ticket_resale.entity;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 import org.hibernate.annotations.AnyDiscriminatorImplicitValues;
 
 import java.time.LocalDateTime;
 
 @Entity
+@Getter
+@Setter
 @Table(name= "users")
 
 public class User {
