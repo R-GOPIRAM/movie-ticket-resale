@@ -19,4 +19,11 @@ public class AuthController {
     ) {
         return authService.register(request);
     }
+
+    @PostMapping("/login")
+    public User login(
+            @RequestBody LoginRequest request
+    ){
+        return authService.login(request);
+    }
 }

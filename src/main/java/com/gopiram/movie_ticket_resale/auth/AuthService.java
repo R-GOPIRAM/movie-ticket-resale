@@ -23,4 +23,16 @@ public class AuthService {
 
         return userRepository.save(user);
     }
+    public User login(LoginRequest request){
+        User user = userRepository.findByEmail(
+                request.getEmail()
+        ).orElseThrow(()->
+                new RuntimeException("User not found")
+        );
+        if(!user.getPassword().equals(request.getPassword())){
+            throw new RuntimeException("Invalid Password");
+        }
+        return user;
+    }
+
 }
